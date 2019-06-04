@@ -44,13 +44,15 @@ endif()
 
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
-    PREFER_NINJA
+    # PREFER_NINJA
     OPTIONS
         # BUILD
         -DBUILD_surface_on_nurbs=ON
         -DBUILD_tools=${BUILD_TOOLS}
         -DBUILD_CUDA=${WITH_CUDA}
+        -DBUILD_CUDA=${WITH_CUDA}
         -DBUILD_GPU=${WITH_CUDA} # build GPU when use CUDA
+        -DBUILD_visualization=OFF
         # PCL
         -DPCL_BUILD_WITH_BOOST_DYNAMIC_LINKING_WIN32=${PCL_SHARED_LIBS}
         -DPCL_BUILD_WITH_FLANN_DYNAMIC_LINKING_WIN32=${PCL_SHARED_LIBS}
@@ -63,7 +65,8 @@ vcpkg_configure_cmake(
         -DWITH_PCAP=${WITH_PCAP}
         -DWITH_PNG=ON
         -DWITH_QHULL=ON
-        -DWITH_QT=${WITH_QT}
+        -DWITH_QT=OFF
+        -DWITH_OPENGL=OFF
         -DWITH_VTK=ON
 )
 

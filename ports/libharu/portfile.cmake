@@ -33,8 +33,13 @@ vcpkg_configure_cmake(
 vcpkg_install_cmake()
 
 if(VCPKG_LIBRARY_LINKAGE STREQUAL "static")
+    if(WIN32)
        file(RENAME ${CURRENT_PACKAGES_DIR}/lib/libhpdfs.lib ${CURRENT_PACKAGES_DIR}/lib/libhpdf.lib)
        file(RENAME ${CURRENT_PACKAGES_DIR}/debug/lib/libhpdfsd.lib ${CURRENT_PACKAGES_DIR}/debug/lib/libhpdfd.lib)
+    else()
+        file(RENAME ${CURRENT_PACKAGES_DIR}/lib/libhpdfs.a ${CURRENT_PACKAGES_DIR}/lib/libhpdf.a)
+        file(RENAME ${CURRENT_PACKAGES_DIR}/debug/lib/libhpdfs.a ${CURRENT_PACKAGES_DIR}/debug/lib/libhpdf.a) 
+    endif()
 endif()
 
 file(REMOVE_RECURSE
