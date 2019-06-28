@@ -6,6 +6,8 @@ vcpkg_from_github(
     REF 9b41a4ea5ade8e1250b9c1b279f3a9c098811b5a
     SHA512 011de54eafac646e114da887ca9ba9588f1cf15afa977f724af1417aca7b24dd4f68ab37e5ff2439b1d1c9376433bcbdf0c10ff9eba89005e92391fedb8ea612
     HEAD_REF master
+    PATCHES
+        fix_cholmod.patch
 )
 
 string(COMPARE EQUAL "${VCPKG_LIBRARY_LINKAGE}" "dynamic" BUILD_LGPL_SHARED_LIBS)

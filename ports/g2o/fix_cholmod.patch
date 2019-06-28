@@ -1,0 +1,14 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index a3f66dd..7a56a6e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -3,6 +3,9 @@ set(CMAKE_LEGACY_CYGWIN_WIN32 0)
+ 
+ project(g2o)
+ 
++find_package(BLAS REQUIRED)
++find_package(LAPACK REQUIRED)  
++
+ include(CPack)
+ 
+ # The library prefix
