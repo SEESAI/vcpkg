@@ -68,7 +68,7 @@ vcpkg_configure_cmake(
         -DWITH_QHULL=ON
         -DWITH_QT=OFF
         -DWITH_OPENGL=OFF
-        -DWITH_VTK=ON
+        -DWITH_VTK=OFF
 )
 
 vcpkg_install_cmake()
