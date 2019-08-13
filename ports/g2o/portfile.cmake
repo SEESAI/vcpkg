@@ -18,7 +18,6 @@ vcpkg_configure_cmake(
         -DG2O_BUILD_EXAMPLES=OFF
         -DG2O_BUILD_APPS=OFF
         -DG2O_USE_OPENGL=OFF
-        -DLAPACK_LIBRARIES=/usr/lib//x86_64-linux-gnu/lapack/liblapack.a
 )
 
 vcpkg_install_cmake()
