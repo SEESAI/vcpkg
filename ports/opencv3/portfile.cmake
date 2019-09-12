@@ -320,6 +320,7 @@ vcpkg_configure_cmake(
         -DWITH_JASPER=${WITH_JASPER}
         -DWITH_JPEG=${WITH_JPEG}
         -DWITH_LAPACK=OFF
+	-DWITH_LIBV4L=ON
         -DWITH_MATLAB=OFF
         -DWITH_MSMF=${WITH_MSMF}
         -DWITH_OPENCLAMDBLAS=OFF
