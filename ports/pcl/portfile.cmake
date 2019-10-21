@@ -18,7 +18,7 @@ file(REMOVE ${SOURCE_PATH}/cmake/Modules/FindFLANN.cmake)
 
 string(COMPARE EQUAL "${VCPKG_LIBRARY_LINKAGE}" "dynamic" PCL_SHARED_LIBS)
 
-vcpkg_check_features(
+vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
     openni2 WITH_OPENNI2
     qt WITH_QT
     pcap WITH_PCAP
