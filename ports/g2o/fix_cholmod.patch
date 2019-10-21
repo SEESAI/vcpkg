@@ -1,4 +1,34 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
+index bc0be86..a94ce0f 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -106,9 +106,9 @@ option (G2O_USE_CHOLMOD "Build g2o with CHOLMOD support" ON)
+ 
+ find_package(Cholmod)
+ find_package(BLAS)
+-find_package(LAPACK)
++find_package(CLAPACK)
+ 
+-if(G2O_USE_CHOLMOD AND CHOLMOD_FOUND AND BLAS_FOUND AND LAPACK_FOUND)
++if(G2O_USE_CHOLMOD AND CHOLMOD_FOUND AND BLAS_FOUND AND CLAPACK_FOUND)
+   message(STATUS "Found CHOLMOD and its dependencies")
+   set(CHOLMOD_FOUND TRUE)
+ else()
+diff --git a/g2o/solvers/cholmod/CMakeLists.txt b/g2o/solvers/cholmod/CMakeLists.txt
+index da59957..e9ca1eb 100644
+--- a/g2o/solvers/cholmod/CMakeLists.txt
++++ b/g2o/solvers/cholmod/CMakeLists.txt
+@@ -15,7 +15,7 @@ if (APPLE)
+ endif()
+ 
+ add_definitions(${BLAS_DEFINITIONS} ${LAPACK_DEFINITIONS})
+-target_link_libraries(solver_cholmod ${CHOLMOD_LIBRARIES} ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES} core)
++target_link_libraries(solver_cholmod ${CHOLMOD_LIBRARIES} ${BLAS_LIBRARIES} lapack core)
+ 
+ install(TARGETS solver_cholmod
+   EXPORT ${G2O_TARGETS_EXPORT_NAME}
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
 index a3f66dd..bc0be86 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
