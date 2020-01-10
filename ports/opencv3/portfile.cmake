@@ -268,6 +268,7 @@ vcpkg_configure_cmake(
         ###### PROTOBUF
         -DPROTOBUF_UPDATE_FILES=ON
         -DUPDATE_PROTO_FILES=ON
+        -DWITH_GSTREAMER=ON
         # CMAKE
         -DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
         -DCMAKE_DISABLE_FIND_PACKAGE_JNI=ON
@@ -282,7 +283,6 @@ vcpkg_configure_cmake(
         ${FEATURE_OPTIONS}
         -DHALIDE_ROOT_DIR=${CURRENT_INSTALLED_DIR}
         -DWITH_IPP=${WITH_IPP}
-	      -DWITH_LIBV4L=ON
         -DWITH_MATLAB=OFF
         -DWITH_MSMF=${WITH_MSMF}
         -DWITH_PROTOBUF=ON
