@@ -92,3 +92,6 @@ Description: Halide support for opencv
 
 Feature: world
 Description: Compile to a single package support for opencv
+
+Feature: gstreamer
+Description: Adding gstreamer option for build (requires external gstreamer deps)
