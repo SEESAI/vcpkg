@@ -247,9 +247,9 @@ vcpkg_configure_cmake(
         -DBUILD_EXAMPLES=OFF
         ###### Disable build 3rd party libs
         -DBUILD_JASPER=OFF
-        -DBUILD_JPEG=OFF
+        -DBUILD_JPEG=ON
         -DBUILD_OPENEXR=OFF
-        -DBUILD_PNG=OFF
+        -DBUILD_PNG=ON
         -DBUILD_TIFF=OFF
         -DBUILD_WEBP=OFF
         -DBUILD_ZLIB=OFF
