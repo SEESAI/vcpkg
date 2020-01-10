@@ -42,6 +42,7 @@ vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
  "tiff"     WITH_TIFF
  "webp"     WITH_WEBP
  "world"    BUILD_opencv_world
+ "gstreamer" WITH_GSTREAMER
 )
 
 # Cannot use vcpkg_check_features() for "ipp", "ovis", "tbb", and "vtk".
@@ -60,6 +61,12 @@ set(WITH_TBB OFF)
 if("tbb" IN_LIST FEATURES)
   set(WITH_TBB ON)
 endif()
+
+set(WITH_GSTREAMER OFF)
+if("gstreamer" IN_LIST FEATURES)
+  set(WITH_GSTREAMER ON)
+endif()
+
 
 set(WITH_VTK OFF)
 if("vtk" IN_LIST FEATURES)
@@ -268,7 +275,7 @@ vcpkg_configure_cmake(
         ###### PROTOBUF
         -DPROTOBUF_UPDATE_FILES=ON
         -DUPDATE_PROTO_FILES=ON
-        -DWITH_GSTREAMER=ON
+        -DWITH_GSTREAMER=${WITH_GSTREAMER}
         # CMAKE
         -DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
         -DCMAKE_DISABLE_FIND_PACKAGE_JNI=ON
