@@ -72,6 +72,9 @@
         "gdcm"
       ]
     },
+    "gstreamer": {
+      "description": "Gstreamer module for opencv"
+    },
     "halide": {
       "description": "Halide support for opencv",
       "dependencies": [

@@ -108,6 +108,13 @@ if("tbb" IN_LIST FEATURES)
   set(WITH_TBB ON)
 endif()
 
+set(WITH_GSTREAMER OFF)
+if("gstreamer" IN_LIST FEATURES)
+  set(WITH_GSTREAMER ON)
+endif()
+
+
+
 if("dnn" IN_LIST FEATURES)
   vcpkg_download_distfile(TINYDNN_ARCHIVE
     URLS "https://github.com/tiny-dnn/tiny-dnn/archive/v1.0.0a3.tar.gz"
@@ -391,6 +398,7 @@ vcpkg_configure_cmake(
         -DWITH_PROTOBUF=${BUILD_opencv_dnn}
         -DWITH_OPENCLAMDBLAS=OFF
         -DWITH_TBB=${WITH_TBB}
+        -DWITH_GSTREAMER=${WITH_GSTREAMER}
         -DWITH_OPENJPEG=OFF
         ###### BUILD_options (mainly modules which require additional libraries)
         -DBUILD_opencv_ovis=${BUILD_opencv_ovis}
