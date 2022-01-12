@@ -14,6 +14,7 @@ vcpkg_from_github(
         realsense2.patch
         add-gcc-version-check.patch
         fix-find-qhull.patch
+        make_aligned_operator_new.patch
 )
 
 file(REMOVE ${SOURCE_PATH}/cmake/Modules/FindQhull.cmake)
