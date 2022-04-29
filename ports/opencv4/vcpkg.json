@@ -131,16 +131,10 @@
       ]
     },
     "gstreamer": {
-      "description": "gstreamer support for opencv",
-      "dependencies": [
-        "gstreamer"
-      ]
+      "description": "gstreamer support for opencv"
     },
     "gtk": {
-      "description": "GTK support for opencv",
-      "dependencies": [
-        "gtk"
-      ]
+      "description": "GTK support for opencv"
     },
     "halide": {
       "description": "Halide support for opencv",

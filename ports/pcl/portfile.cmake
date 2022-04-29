@@ -20,6 +20,7 @@ vcpkg_from_github(
         install-examples.patch
         no-absolute.patch
         Workaround-ICE-in-release.patch
+        make_aligned_operator_new.patch
 )
 
 file(REMOVE "${SOURCE_PATH}/cmake/Modules/FindQhull.cmake"
