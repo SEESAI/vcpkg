@@ -4,6 +4,8 @@ vcpkg_from_github(
     REF 4.1.1
     SHA512 24ce84b9dbfc6a4bcbe4754a9b5d9abe4c4d5905133f5a66f489915c99fe3960f94f830d3b2ab84366c9983f454dbfa5e6a79018f362726c13f434620370d06e
     HEAD_REF develop
+    PATCHES
+        fix-win-release-build-stuck.patch
 )
 
 vcpkg_configure_cmake(
@@ -21,6 +23,9 @@ vcpkg_configure_cmake(
         -DGTSAM_INSTALL_MATLAB_TOOLBOX=OFF
         -DGTSAM_BUILD_WRAP=OFF
         -DGTSAM_USE_SYSTEM_EIGEN=ON
+        -DGTSAM_USE_SYSTEM_METIS=ON
+        -DGTSAM_BUILD_EXAMPLES_ALWAYS=OFF
+        -DGTSAM_BUILD_UNSTABLE=OFF
 )
 
 vcpkg_install_cmake()
