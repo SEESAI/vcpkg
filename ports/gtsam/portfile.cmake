@@ -8,9 +8,8 @@ vcpkg_from_github(
         fix-win-release-build-stuck.patch
 )
 
-vcpkg_configure_cmake(
+vcpkg_cmake_configure(
     SOURCE_PATH ${SOURCE_PATH}
-    PREFER_NINJA
     OPTIONS
         -DGTSAM_USE_QUATERNIONS=OFF
         -DGTSAM_POSE3_EXPMAP=OFF
@@ -28,12 +27,12 @@ vcpkg_configure_cmake(
         -DGTSAM_BUILD_UNSTABLE=OFF
 )
 
-vcpkg_install_cmake()
+vcpkg_cmake_install()
 
 if(VCPKG_TARGET_IS_WINDOWS)
-    vcpkg_fixup_cmake_targets(CONFIG_PATH CMake)
+    vcpkg_cmake_config_fixup(CONFIG_PATH CMake)
 else()
-    vcpkg_fixup_cmake_targets(CONFIG_PATH lib/cmake)
+    vcpkg_cmake_config_fixup(CONFIG_PATH lib/cmake)
 endif()
 
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
