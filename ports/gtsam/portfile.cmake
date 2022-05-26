@@ -33,27 +33,27 @@ if(VCPKG_TARGET_IS_WINDOWS)
     vcpkg_cmake_config_fixup(CONFIG_PATH CMake)
 else()
     vcpkg_cmake_config_fixup(CONFIG_PATH lib/cmake)
-endif()
 
-## _IMPORT_PREFIX needs to go up one extra level in the directory tree.
-file(GLOB_RECURSE TARGET_CMAKES "${CURRENT_PACKAGES_DIR}/*-exports.cmake")
-foreach(TARGET_CMAKE IN LISTS TARGET_CMAKES)
-    file(READ ${TARGET_CMAKE} _contents)
-    string(REPLACE
-[[
-get_filename_component(_IMPORT_PREFIX "${CMAKE_CURRENT_LIST_FILE}" PATH)
-get_filename_component(_IMPORT_PREFIX "${_IMPORT_PREFIX}" PATH)
-get_filename_component(_IMPORT_PREFIX "${_IMPORT_PREFIX}" PATH)
-]]
-[[
-get_filename_component(_IMPORT_PREFIX "${CMAKE_CURRENT_LIST_FILE}" PATH)
-get_filename_component(_IMPORT_PREFIX "${_IMPORT_PREFIX}" PATH)
-get_filename_component(_IMPORT_PREFIX "${_IMPORT_PREFIX}" PATH)
-get_filename_component(_IMPORT_PREFIX "${_IMPORT_PREFIX}" PATH)
-]]
-        _contents "${_contents}")
-    file(WRITE ${TARGET_CMAKE} "${_contents}")
-endforeach()
+    ## _IMPORT_PREFIX needs to go up one extra level in the directory tree.
+    file(GLOB_RECURSE TARGET_CMAKES "${CURRENT_PACKAGES_DIR}/*-exports.cmake")
+    foreach(TARGET_CMAKE IN LISTS TARGET_CMAKES)
+        file(READ ${TARGET_CMAKE} _contents)
+        string(REPLACE
+    [[
+    get_filename_component(_IMPORT_PREFIX "${CMAKE_CURRENT_LIST_FILE}" PATH)
+    get_filename_component(_IMPORT_PREFIX "${_IMPORT_PREFIX}" PATH)
+    get_filename_component(_IMPORT_PREFIX "${_IMPORT_PREFIX}" PATH)
+    ]]
+    [[
+    get_filename_component(_IMPORT_PREFIX "${CMAKE_CURRENT_LIST_FILE}" PATH)
+    get_filename_component(_IMPORT_PREFIX "${_IMPORT_PREFIX}" PATH)
+    get_filename_component(_IMPORT_PREFIX "${_IMPORT_PREFIX}" PATH)
+    get_filename_component(_IMPORT_PREFIX "${_IMPORT_PREFIX}" PATH)
+    ]]
+            _contents "${_contents}")
+        file(WRITE ${TARGET_CMAKE} "${_contents}")
+    endforeach()
+endif()
 
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/share)
