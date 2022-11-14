@@ -1,0 +1,15 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 2d87142..6f20f0f 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -7,6 +7,10 @@ if(NOT DEFINED CMAKE_MACOSX_RPATH)
+   set(CMAKE_MACOSX_RPATH 0)
+ endif()
+ 
++if(WIN32)
++    set(CMAKE_CXX_FLAGS_RELEASE "/Ob0")
++endif()
++
+ # Set the version number for the library
+ set (GTSAM_VERSION_MAJOR 4)
+ set (GTSAM_VERSION_MINOR 1)
