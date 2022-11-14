@@ -93,9 +93,7 @@
         {
           "name": "opencv4",
           "default-features": false,
-          "features": [
-            "gtk"
-          ],
+          "features": [],
           "platform": "linux"
         }
       ]
@@ -167,15 +165,7 @@
     },
     "gstreamer": {
       "description": "gstreamer support for opencv",
-      "dependencies": [
-        {
-          "name": "gstreamer",
-          "default-features": false,
-          "features": [
-            "plugins-base"
-          ]
-        }
-      ]
+      "dependencies": []
     },
     "gtk": {
       "description": "GTK support for opencv",
