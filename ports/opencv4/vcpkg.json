@@ -93,9 +93,7 @@
         {
           "name": "opencv4",
           "default-features": false,
-          "features": [
-            "gtk"
-          ],
+          "features": [],
           "platform": "linux"
         }
       ]
