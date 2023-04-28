@@ -1,0 +1,12 @@
+diff --git a/filters/include/pcl/filters/voxel_grid_covariance.h b/filters/include/pcl/filters/voxel_grid_covariance.h
+index 325c85d..3b8f67d 100644
+--- a/filters/include/pcl/filters/voxel_grid_covariance.h
++++ b/filters/include/pcl/filters/voxel_grid_covariance.h
+@@ -81,6 +81,7 @@ namespace pcl
+       using PointCloudConstPtr = typename PointCloud::ConstPtr;
+ 
+     public:
++      PCL_MAKE_ALIGNED_OPERATOR_NEW
+ 
+       using Ptr = shared_ptr<VoxelGrid<PointT> >;
+       using ConstPtr = shared_ptr<const VoxelGrid<PointT> >;
